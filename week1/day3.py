@@ -20,4 +20,5 @@ class SAJobsAnalyser:
         for job in self.jobs:
             print(f"{job['title']} at {job['company']} — R{job['salary']:,}")
 
-analyser = SAJobsAnalyser(jobs)/opt/homebrew/bin/python3 /Users/nonhlemaseko/dev/my-portfolio/week1/day3.pyanalyser.print_all_jobs()
+analyser = SAJobsAnalyser(jobs)
+analyser.print_all_jobs()
