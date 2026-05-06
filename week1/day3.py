@@ -20,5 +20,32 @@ class SAJobsAnalyser:
         for job in self.jobs:
             print(f"{job['title']} at {job['company']} — R{job['salary']:,}")
 
+    def filter_by_province(self, province):
+        print(f"\n--- {province} Jobs ---")
+        for job in self.jobs:
+            if job["province"] == province:
+                print(f"{job['title']} at {job['company']} — R{job['salary']:,}")
+
+    def average_salary(self):
+        total = 0
+        for job in self.jobs:
+            total = total + job["salary"]
+        return total / len(self.jobs)
+
+    def highest_paying_job(self):
+        best_job = None
+        best_salary = 0
+        for job in self.jobs:
+            if job["salary"] > best_salary:
+                best_salary = job["salary"]
+                best_job = job
+        return best_job
+
 analyser = SAJobsAnalyser(jobs)
 analyser.print_all_jobs()
+analyser.filter_by_province("Gauteng")
+analyser.filter_by_province("Western Cape")
+avg = analyser.average_salary()
+print(f"\nAverage salary: R{avg:,.0f}")
+best = analyser.highest_paying_job()
+print(f"Highest paying: {best['title']} at {best['company']} — R{best['salary']:,}")
