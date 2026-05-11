@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Data Engineer",
+    "company": "Discovery",
+    "salary": 550000
+  },
+  {
+    "title": "Data Analyst",
+    "company": "Standard Bank",
+    "salary": 420000
+  },
+  {
+    "title": "ML Engineer",
+    "company": "Takealot",
+    "salary": 800000
+  }
+]
